@@ -1,7 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import dataApi from './DataApi/DataApi';
 
-function App() {
+export default class Home extends Component {
+
   componentDidMount = async () => {
     try {
       const { data } = await dataApi.get('/products');
@@ -9,13 +10,9 @@ function App() {
     } catch (error) {
       console.log(error.message);
     }
-  };
+  }
 
-  return (
-    <div className="App">
-
-    </div>
-  );
+  render() {
+    return (<div className='App'></div>);
+  }
 }
-
-export default App;
