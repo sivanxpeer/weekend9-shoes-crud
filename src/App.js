@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import dataApi from './DataApi/DataApi';
 
-export default class Home extends Component {
-
+export default class App extends Component {
+  constructor(props){
+    super(props);
+    
+    this.state={
+      newItem:"",
+      list:[ ]
+    }
+  }
   componentDidMount = async () => {
     try {
       const { data } = await dataApi.get('/products');
